@@ -1,0 +1,10 @@
+[
+  {
+    "name": "apiKey",
+    "type": "password",
+    "label": "API key",
+    "required": true,
+    "editable": true,
+    "help": "Create a key in the [PricePirate dashboard](https://dashboard.pricepirate.com) under **API Keys**. New accounts get 100 free credits. Learn more about the [PricePirate Price API](https://pricepirate.com/en/price-api/)."
+  }
+]

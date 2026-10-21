@@ -1,0 +1,6 @@
+[
+  { "label": "Prices", "modules": ["getOffers", "getProductDetails"] },
+  { "label": "Jobs", "modules": ["startPriceJob", "getJobResults", "listJobs"] },
+  { "label": "Account", "modules": ["getAccount"] },
+  { "label": "Other", "modules": ["makeApiCall"] }
+]

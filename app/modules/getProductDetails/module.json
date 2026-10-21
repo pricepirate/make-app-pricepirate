@@ -1,0 +1,6 @@
+{
+  "name": "getProductDetails",
+  "typeId": 9,
+  "label": "Get product details by EAN",
+  "description": "Returns product details such as name, brand, images and price range for EANs or product IDs on a marketplace, one bundle per query. Waits up to about 4 minutes for the job."
+}

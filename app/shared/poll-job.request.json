@@ -1,0 +1,25 @@
+{
+  "url": "/api/v2/jobs/{{temp.jobId}}",
+  "method": "GET",
+  "qs": {
+    "omit_partials": "true"
+  },
+  "repeat": {
+    "condition": "{{temp.status == 'pending' && temp.polls < 48}}",
+    "delay": 5000,
+    "limit": 50
+  },
+  "response": {
+    "temp": {
+      "status": "{{body.status}}",
+      "polls": "{{temp.polls + 1}}"
+    },
+    "error": {
+      "message": "[{{statusCode}}] {{ifempty(body.message, 'Polling failed.')}} Job {{temp.jobId}} was already created. Fetch it with Get job results within about 1 hour; do not start it again.",
+      "429": {
+        "type": "RateLimitError",
+        "message": "[429] {{ifempty(body.message, 'Rate limited while polling.')}} Job {{temp.jobId}} was already created. Fetch it with Get job results within about 1 hour; do not start it again."
+      }
+    }
+  }
+}

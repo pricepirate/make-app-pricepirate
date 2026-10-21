@@ -1,0 +1,20 @@
+{
+  "query": "{{item.query}}",
+  "status": "{{item.status}}",
+  "error": "{{item.error}}",
+  "errorCode": "{{item.errorCode}}",
+  "job_id": "{{body.job_id}}",
+  "source": "{{body.source}}",
+  "country": "{{body.country}}",
+  "product_id": "{{item.result.id}}",
+  "product_name": "{{item.result.name}}",
+  "product_url": "{{item.result.url}}",
+  "ean": "{{item.result.ean}}",
+  "brand": "{{item.result.brand}}",
+  "price_min": "{{item.result.price_min}}",
+  "price_avg": "{{item.result.price_avg}}",
+  "price_max": "{{item.result.price_max}}",
+  "offers_count": "{{item.result.offers_count}}",
+  "fetched_at": "{{item.result.fetched_at}}",
+  "offers": "{{item.result.offers}}"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "getJobResults",
+  "typeId": 9,
+  "label": "Get job results",
+  "description": "Returns the results of a finished price job, one bundle per query with product details and offers. Fails with a clear message while the job is still running."
+}

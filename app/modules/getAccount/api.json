@@ -1,0 +1,7 @@
+{
+  "url": "/api/v2/account",
+  "method": "GET",
+  "response": {
+    "output": "{{body}}"
+  }
+}

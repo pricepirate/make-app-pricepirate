@@ -1,0 +1,44 @@
+{
+  "name": "PricePirate Price API – error example (invalid EAN)",
+  "flow": [
+    {
+      "id": 1,
+      "module": "app#pricepirate-price-api-wgy97z:getOffers",
+      "version": 1,
+      "parameters": {
+        "__IMTCONN__": "{{CONNECTION_ID}}"
+      },
+      "mapper": {
+        "marketplace": "idealo",
+        "country": "de",
+        "operation": "search-by-gtin",
+        "queries": [
+          "123"
+        ]
+      },
+      "metadata": {
+        "designer": {
+          "x": 0,
+          "y": 0
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "version": 1,
+    "scenario": {
+      "roundtrips": 1,
+      "maxErrors": 3,
+      "autoCommit": true,
+      "autoCommitTriggerLast": true,
+      "sequential": false,
+      "confidential": false,
+      "dataloss": false,
+      "dlq": false,
+      "freshVariables": false
+    },
+    "designer": {
+      "orphans": []
+    }
+  }
+}

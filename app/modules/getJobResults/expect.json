@@ -1,0 +1,22 @@
+[
+  {
+    "name": "jobId",
+    "type": "text",
+    "label": "Job ID",
+    "required": true,
+    "help": "The job ID returned by Start a price job. Results stay available for about 1 hour after the job finishes."
+  },
+  {
+    "name": "skipEmpty",
+    "type": "boolean",
+    "label": "Skip queries without offers",
+    "default": false,
+    "help": "By default every query returns a bundle, including queries that were not found or failed (see Status and Error code). Turn on to return only queries that have at least one offer."
+  },
+  {
+    "name": "limit",
+    "type": "uinteger",
+    "label": "Limit",
+    "help": "Maximum number of bundles to return. Leave empty to return one bundle per query."
+  }
+]

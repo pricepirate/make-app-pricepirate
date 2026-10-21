@@ -1,0 +1,95 @@
+[
+  {
+    "name": "name",
+    "label": "Account name",
+    "type": "text"
+  },
+  {
+    "name": "credits",
+    "label": "Credits",
+    "type": "collection",
+    "spec": [
+      {
+        "name": "balance",
+        "label": "Balance",
+        "type": "integer"
+      }
+    ]
+  },
+  {
+    "name": "limits",
+    "label": "Limits",
+    "type": "collection",
+    "spec": [
+      {
+        "name": "concurrency",
+        "label": "Concurrency",
+        "type": "collection",
+        "spec": [
+          {
+            "name": "limit",
+            "label": "Limit",
+            "type": "integer"
+          },
+          {
+            "name": "in_flight",
+            "label": "In flight",
+            "type": "integer"
+          },
+          {
+            "name": "remaining",
+            "label": "Remaining",
+            "type": "integer"
+          }
+        ]
+      },
+      {
+        "name": "daily",
+        "label": "Daily",
+        "type": "collection",
+        "spec": [
+          {
+            "name": "limit",
+            "label": "Limit",
+            "type": "integer"
+          },
+          {
+            "name": "used",
+            "label": "Used",
+            "type": "integer"
+          },
+          {
+            "name": "remaining",
+            "label": "Remaining",
+            "type": "integer"
+          },
+          {
+            "name": "resets_at",
+            "label": "Resets at",
+            "type": "date"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "entitlements",
+    "label": "Entitlements",
+    "type": "array",
+    "spec": {
+      "type": "collection",
+      "spec": [
+        {
+          "name": "source",
+          "label": "Marketplace",
+          "type": "text"
+        },
+        {
+          "name": "operation",
+          "label": "Operation",
+          "type": "text"
+        }
+      ]
+    }
+  }
+]

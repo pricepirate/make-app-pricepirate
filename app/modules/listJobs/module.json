@@ -1,0 +1,6 @@
+{
+  "name": "listJobs",
+  "typeId": 9,
+  "label": "List jobs",
+  "description": "Returns your account's price jobs, newest first, with query counts, credits and outcomes."
+}

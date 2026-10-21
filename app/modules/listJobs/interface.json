@@ -1,0 +1,81 @@
+[
+  {
+    "name": "job_id",
+    "label": "Job ID",
+    "type": "text"
+  },
+  {
+    "name": "source",
+    "label": "Marketplace",
+    "type": "text"
+  },
+  {
+    "name": "operation",
+    "label": "Look up by",
+    "type": "text"
+  },
+  {
+    "name": "country",
+    "label": "Country",
+    "type": "text"
+  },
+  {
+    "name": "query_count",
+    "label": "Query count",
+    "type": "uinteger"
+  },
+  {
+    "name": "credits",
+    "label": "Credits",
+    "type": "collection",
+    "spec": [
+      {
+        "name": "billed",
+        "label": "Billed",
+        "type": "integer"
+      },
+      {
+        "name": "refunded",
+        "label": "Refunded",
+        "type": "integer"
+      }
+    ]
+  },
+  {
+    "name": "settled",
+    "label": "Settled",
+    "type": "boolean"
+  },
+  {
+    "name": "created_at",
+    "label": "Created at",
+    "type": "date"
+  },
+  {
+    "name": "settled_at",
+    "label": "Settled at",
+    "type": "date"
+  },
+  {
+    "name": "results",
+    "label": "Results",
+    "type": "collection",
+    "spec": [
+      {
+        "name": "found",
+        "label": "Found",
+        "type": "uinteger"
+      },
+      {
+        "name": "not_found",
+        "label": "Not found",
+        "type": "uinteger"
+      },
+      {
+        "name": "error",
+        "label": "Error",
+        "type": "uinteger"
+      }
+    ]
+  }
+]

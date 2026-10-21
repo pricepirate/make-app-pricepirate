@@ -1,0 +1,27 @@
+[
+  {
+    "name": "job_id",
+    "label": "Job ID",
+    "type": "text"
+  },
+  {
+    "name": "source",
+    "label": "Marketplace",
+    "type": "text"
+  },
+  {
+    "name": "country",
+    "label": "Country",
+    "type": "text"
+  },
+  {
+    "name": "operation",
+    "label": "Look up by",
+    "type": "text"
+  },
+  {
+    "name": "query_count",
+    "label": "Query count",
+    "type": "uinteger"
+  }
+]

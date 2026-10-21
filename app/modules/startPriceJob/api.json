@@ -1,0 +1,23 @@
+{
+  "url": "/api/v2/jobs",
+  "method": "POST",
+  "body": {
+    "source": "{{parameters.marketplace}}",
+    "operation": "{{ifempty(parameters.operation, 'search-by-gtin')}}",
+    "country": "{{parameters.country}}",
+    "queries": "{{parameters.queries}}",
+    "options": {
+      "includeDetail": "{{parameters.includeDetail}}",
+      "zipcode": "{{parameters.zipcode}}"
+    }
+  },
+  "response": {
+    "output": {
+      "job_id": "{{body.job_id}}",
+      "source": "{{parameters.marketplace}}",
+      "country": "{{parameters.country}}",
+      "operation": "{{ifempty(parameters.operation, 'search-by-gtin')}}",
+      "query_count": "{{length(parameters.queries)}}"
+    }
+  }
+}

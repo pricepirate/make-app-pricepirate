@@ -1,0 +1,9 @@
+{
+  "name": "pricepirate-price-api",
+  "label": "PricePirate Price API",
+  "description": "Price and offer data for EANs across European marketplaces such as Idealo, Amazon, Google Shopping, bol.com and Klarna/PriceRunner.",
+  "theme": "#FF7400",
+  "language": "en",
+  "countries": [],
+  "version": 1
+}

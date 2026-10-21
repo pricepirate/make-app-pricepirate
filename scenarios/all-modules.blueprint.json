@@ -1,0 +1,215 @@
+{
+  "name": "PricePirate Price API – all modules",
+  "flow": [
+    {
+      "id": 1,
+      "module": "app#pricepirate-price-api-wgy97z:getAccount",
+      "version": 1,
+      "parameters": {
+        "__IMTCONN__": "{{CONNECTION_ID}}"
+      },
+      "mapper": {},
+      "metadata": {
+        "designer": {
+          "x": 0,
+          "y": 0
+        }
+      }
+    },
+    {
+      "id": 2,
+      "module": "builtin:BasicRouter",
+      "version": 1,
+      "mapper": null,
+      "metadata": {
+        "designer": {
+          "x": 300,
+          "y": 0
+        }
+      },
+      "routes": [
+        {
+          "flow": [
+            {
+              "id": 3,
+              "module": "app#pricepirate-price-api-wgy97z:makeApiCall",
+              "version": 1,
+              "parameters": {
+                "__IMTCONN__": "{{CONNECTION_ID}}"
+              },
+              "mapper": {
+                "url": "/api/v2/account",
+                "method": "GET",
+                "headers": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "qs": []
+              },
+              "metadata": {
+                "designer": {
+                  "x": 600,
+                  "y": -300
+                }
+              }
+            }
+          ]
+        },
+        {
+          "flow": [
+            {
+              "id": 4,
+              "module": "app#pricepirate-price-api-wgy97z:startPriceJob",
+              "version": 1,
+              "parameters": {
+                "__IMTCONN__": "{{CONNECTION_ID}}"
+              },
+              "mapper": {
+                "marketplace": "amazon",
+                "country": "de",
+                "operation": "search-by-gtin",
+                "includeDetail": false,
+                "queries": [
+                  "4013474101469"
+                ]
+              },
+              "metadata": {
+                "designer": {
+                  "x": 600,
+                  "y": -150
+                }
+              }
+            },
+            {
+              "id": 5,
+              "module": "util:FunctionSleep",
+              "version": 1,
+              "parameters": {},
+              "mapper": {
+                "duration": "45"
+              },
+              "metadata": {
+                "designer": {
+                  "x": 900,
+                  "y": -150
+                }
+              }
+            },
+            {
+              "id": 6,
+              "module": "app#pricepirate-price-api-wgy97z:getJobResults",
+              "version": 1,
+              "parameters": {
+                "__IMTCONN__": "{{CONNECTION_ID}}"
+              },
+              "mapper": {
+                "jobId": "{{4.job_id}}",
+                "skipEmpty": false
+              },
+              "metadata": {
+                "designer": {
+                  "x": 1200,
+                  "y": -150
+                }
+              }
+            }
+          ]
+        },
+        {
+          "flow": [
+            {
+              "id": 7,
+              "module": "app#pricepirate-price-api-wgy97z:getOffers",
+              "version": 1,
+              "parameters": {
+                "__IMTCONN__": "{{CONNECTION_ID}}"
+              },
+              "mapper": {
+                "marketplace": "idealo",
+                "country": "de",
+                "operation": "search-by-gtin",
+                "skipEmpty": false,
+                "queries": [
+                  "4013474101469"
+                ]
+              },
+              "metadata": {
+                "designer": {
+                  "x": 600,
+                  "y": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "flow": [
+            {
+              "id": 8,
+              "module": "app#pricepirate-price-api-wgy97z:getProductDetails",
+              "version": 1,
+              "parameters": {
+                "__IMTCONN__": "{{CONNECTION_ID}}"
+              },
+              "mapper": {
+                "marketplace": "amazon",
+                "country": "de",
+                "operation": "search-by-gtin",
+                "includeDetail": true,
+                "queries": [
+                  "4013474101469"
+                ]
+              },
+              "metadata": {
+                "designer": {
+                  "x": 600,
+                  "y": 150
+                }
+              }
+            }
+          ]
+        },
+        {
+          "flow": [
+            {
+              "id": 9,
+              "module": "app#pricepirate-price-api-wgy97z:listJobs",
+              "version": 1,
+              "parameters": {
+                "__IMTCONN__": "{{CONNECTION_ID}}"
+              },
+              "mapper": {
+                "limit": "10"
+              },
+              "metadata": {
+                "designer": {
+                  "x": 600,
+                  "y": 300
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "version": 1,
+    "scenario": {
+      "roundtrips": 1,
+      "maxErrors": 3,
+      "autoCommit": true,
+      "autoCommitTriggerLast": true,
+      "sequential": false,
+      "confidential": false,
+      "dataloss": false,
+      "dlq": false,
+      "freshVariables": false
+    },
+    "designer": {
+      "orphans": []
+    }
+  }
+}

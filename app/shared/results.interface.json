@@ -1,0 +1,243 @@
+[
+  {
+    "name": "query",
+    "label": "Query",
+    "type": "text"
+  },
+  {
+    "name": "status",
+    "label": "Status",
+    "type": "text"
+  },
+  {
+    "name": "error",
+    "label": "Error",
+    "type": "text"
+  },
+  {
+    "name": "errorCode",
+    "label": "Error code",
+    "type": "text"
+  },
+  {
+    "name": "job_id",
+    "label": "Job ID",
+    "type": "text"
+  },
+  {
+    "name": "source",
+    "label": "Marketplace",
+    "type": "text"
+  },
+  {
+    "name": "country",
+    "label": "Country",
+    "type": "text"
+  },
+  {
+    "name": "product_id",
+    "label": "Product ID",
+    "type": "text"
+  },
+  {
+    "name": "product_name",
+    "label": "Product name",
+    "type": "text"
+  },
+  {
+    "name": "product_url",
+    "label": "Product URL",
+    "type": "url"
+  },
+  {
+    "name": "ean",
+    "label": "EAN",
+    "type": "text"
+  },
+  {
+    "name": "brand",
+    "label": "Brand",
+    "type": "text"
+  },
+  {
+    "name": "price_min",
+    "label": "Lowest price",
+    "type": "number"
+  },
+  {
+    "name": "price_avg",
+    "label": "Average price",
+    "type": "number"
+  },
+  {
+    "name": "price_max",
+    "label": "Highest price",
+    "type": "number"
+  },
+  {
+    "name": "offers_count",
+    "label": "Offers count",
+    "type": "number"
+  },
+  {
+    "name": "fetched_at",
+    "label": "Fetched at",
+    "type": "date"
+  },
+  {
+    "name": "description",
+    "label": "Description",
+    "type": "text"
+  },
+  {
+    "name": "image_urls",
+    "label": "Image URLs",
+    "type": "array",
+    "spec": {
+      "type": "url"
+    }
+  },
+  {
+    "name": "categories",
+    "label": "Categories",
+    "type": "array",
+    "spec": {
+      "type": "text"
+    }
+  },
+  {
+    "name": "review_rating",
+    "label": "Review rating",
+    "type": "number"
+  },
+  {
+    "name": "review_count",
+    "label": "Review count",
+    "type": "number"
+  },
+  {
+    "name": "platform_data",
+    "label": "Platform data",
+    "type": "any"
+  },
+  {
+    "name": "offers",
+    "label": "Offers",
+    "type": "array",
+    "spec": {
+      "type": "collection",
+      "spec": [
+        {
+          "name": "shop_name",
+          "label": "Shop name",
+          "type": "text"
+        },
+        {
+          "name": "shop_url",
+          "label": "Shop URL",
+          "type": "url"
+        },
+        {
+          "name": "shop_type",
+          "label": "Shop type",
+          "type": "text"
+        },
+        {
+          "name": "price",
+          "label": "Price",
+          "type": "number"
+        },
+        {
+          "name": "shipping",
+          "label": "Shipping",
+          "type": "number"
+        },
+        {
+          "name": "total",
+          "label": "Total (price + shipping)",
+          "type": "number"
+        },
+        {
+          "name": "currency",
+          "label": "Currency",
+          "type": "text"
+        },
+        {
+          "name": "availability_code",
+          "label": "Availability code",
+          "type": "text"
+        },
+        {
+          "name": "availability_text",
+          "label": "Availability text",
+          "type": "text"
+        },
+        {
+          "name": "condition",
+          "label": "Condition",
+          "type": "text"
+        },
+        {
+          "name": "position",
+          "label": "Position",
+          "type": "text"
+        },
+        {
+          "name": "marketplace_name",
+          "label": "Marketplace name",
+          "type": "text"
+        },
+        {
+          "name": "shop_review_rating",
+          "label": "Shop review rating",
+          "type": "number"
+        },
+        {
+          "name": "shop_review_count",
+          "label": "Shop review count",
+          "type": "number"
+        },
+        {
+          "name": "free_return",
+          "label": "Free return",
+          "type": "boolean"
+        },
+        {
+          "name": "voucher",
+          "label": "Voucher",
+          "type": "boolean"
+        },
+        {
+          "name": "direct_sale",
+          "label": "Direct sale",
+          "type": "boolean"
+        },
+        {
+          "name": "title",
+          "label": "Offer title",
+          "type": "text"
+        },
+        {
+          "name": "sellerId",
+          "label": "Seller ID",
+          "type": "text"
+        },
+        {
+          "name": "classification",
+          "label": "Classification",
+          "type": "text"
+        },
+        {
+          "name": "confidence",
+          "label": "Confidence",
+          "type": "text"
+        },
+        {
+          "name": "platform_data",
+          "label": "Platform data",
+          "type": "any"
+        }
+      ]
+    }
+  }
+]

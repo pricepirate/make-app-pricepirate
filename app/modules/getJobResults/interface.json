@@ -1,0 +1,5 @@
+[
+  {
+    "$include": "shared/results.interface.json"
+  }
+]

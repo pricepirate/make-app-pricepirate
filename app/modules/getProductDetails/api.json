@@ -1,0 +1,25 @@
+[
+  {
+    "$include": "shared/create-job.request.json"
+  },
+  {
+    "$include": "shared/poll-job.request.json"
+  },
+  {
+    "url": "/api/v2/jobs/{{temp.jobId}}",
+    "method": "GET",
+    "response": {
+      "valid": {
+        "condition": "{{body.status == 'completed'}}",
+        "message": "{{if(body.status == 'pending', 'Job ' + temp.jobId + ' is still running after about 4 minutes. Get its results later with the Get job results module. Results stay available for about 1 hour after the job finishes.', 'Job ' + temp.jobId + ' failed. Its credits are refunded in full.')}}"
+      },
+      "iterate": {
+        "container": "{{body.results}}"
+      },
+      "output": {
+        "$include": "shared/details.output.json"
+      },
+      "limit": "{{parameters.limit}}"
+    }
+  }
+]

@@ -1,0 +1,85 @@
+[
+  {
+    "name": "url",
+    "type": "text",
+    "label": "URL",
+    "required": true,
+    "help": "Enter a path relative to `https://api-v2.pricepirate.com`. For example: `/api/v2/account`. See the [API documentation](https://pricepirate.com/docs/en/api/price-data/overview)."
+  },
+  {
+    "name": "method",
+    "type": "select",
+    "label": "Method",
+    "required": true,
+    "default": "GET",
+    "options": [
+      {
+        "label": "GET",
+        "value": "GET"
+      },
+      {
+        "label": "POST",
+        "value": "POST"
+      },
+      {
+        "label": "PUT",
+        "value": "PUT"
+      },
+      {
+        "label": "PATCH",
+        "value": "PATCH"
+      },
+      {
+        "label": "DELETE",
+        "value": "DELETE"
+      }
+    ]
+  },
+  {
+    "name": "headers",
+    "type": "array",
+    "label": "Headers",
+    "spec": [
+      {
+        "name": "key",
+        "type": "text",
+        "label": "Key"
+      },
+      {
+        "name": "value",
+        "type": "text",
+        "label": "Value"
+      }
+    ],
+    "default": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      }
+    ],
+    "help": "You don't need to add the API key header; the connection adds it."
+  },
+  {
+    "name": "qs",
+    "type": "array",
+    "label": "Query string",
+    "spec": [
+      {
+        "name": "key",
+        "type": "text",
+        "label": "Key"
+      },
+      {
+        "name": "value",
+        "type": "text",
+        "label": "Value"
+      }
+    ]
+  },
+  {
+    "name": "body",
+    "type": "any",
+    "label": "Body",
+    "help": "Enter the request body, for example a JSON string for `POST /api/v2/jobs`."
+  }
+]

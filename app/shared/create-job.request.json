@@ -1,0 +1,21 @@
+{
+  "url": "/api/v2/jobs",
+  "method": "POST",
+  "body": {
+    "source": "{{parameters.marketplace}}",
+    "operation": "{{ifempty(parameters.operation, 'search-by-gtin')}}",
+    "country": "{{parameters.country}}",
+    "queries": "{{parameters.queries}}",
+    "options": {
+      "includeDetail": "{{parameters.includeDetail}}",
+      "zipcode": "{{parameters.zipcode}}"
+    }
+  },
+  "response": {
+    "temp": {
+      "jobId": "{{body.job_id}}",
+      "status": "pending",
+      "polls": 0
+    }
+  }
+}

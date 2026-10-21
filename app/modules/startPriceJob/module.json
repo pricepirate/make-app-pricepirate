@@ -1,0 +1,6 @@
+{
+  "name": "startPriceJob",
+  "typeId": 4,
+  "label": "Start a price job",
+  "description": "Starts a price job without waiting for it and returns its job ID. Use it for large batches, then fetch the results with Get job results."
+}

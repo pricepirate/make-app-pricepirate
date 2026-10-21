@@ -1,0 +1,26 @@
+{
+  "baseUrl": "https://api-v2.pricepirate.com",
+  "timeout": "{{common.timeout}}",
+  "headers": {
+    "x-api-key": "{{connection.apiKey}}",
+    "x-pricepirate-integration": "make"
+  },
+  "response": {
+    "error": {
+      "message": "[{{statusCode}}] {{ifempty(body.message, 'The PricePirate Price API returned an error.')}}",
+      "400": { "type": "DataError", "message": "[400] {{ifempty(body.message, 'Invalid request.')}}" },
+      "401": { "type": "InvalidAccessTokenError", "message": "[401] {{ifempty(body.message, 'Missing, unknown or revoked API key.')}}" },
+      "402": { "type": "RuntimeError", "message": "[402] {{ifempty(body.message, 'Not enough credits for this job. Nothing was charged.')}}" },
+      "403": { "type": "RuntimeError", "message": "[403] {{ifempty(body.message, 'Your account cannot use this marketplace and lookup type, or it is suspended.')}}" },
+      "404": { "type": "DataError", "message": "[404] {{ifempty(body.message, 'Not found. Job results expire about 1 hour after the job finishes.')}}" },
+      "429": { "type": "RateLimitError", "message": "[429] {{ifempty(body.message, 'Concurrency or daily query limit reached. Nothing was charged.')}}" },
+      "500": { "type": "ConnectionError", "message": "[500] {{ifempty(body.message, 'PricePirate server error.')}}" },
+      "502": { "type": "ConnectionError", "message": "[502] {{ifempty(body.message, 'PricePirate upstream error.')}}" },
+      "503": { "type": "ConnectionError", "message": "[503] {{ifempty(body.message, 'This marketplace is currently unavailable.')}}" },
+      "504": { "type": "ConnectionError", "message": "[504] {{ifempty(body.message, 'PricePirate gateway timeout.')}}" }
+    }
+  },
+  "log": {
+    "sanitize": ["request.headers.x-api-key"]
+  }
+}

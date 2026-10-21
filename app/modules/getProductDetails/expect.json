@@ -1,0 +1,11 @@
+[
+  {
+    "$include": "shared/job-input.json"
+  },
+  {
+    "name": "limit",
+    "type": "uinteger",
+    "label": "Limit",
+    "help": "Maximum number of bundles to return. Leave empty to return one bundle per query."
+  }
+]

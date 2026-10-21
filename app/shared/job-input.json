@@ -1,0 +1,553 @@
+[
+  {
+    "name": "marketplace",
+    "type": "select",
+    "label": "Marketplace",
+    "required": true,
+    "default": "idealo",
+    "help": "Where to look up prices. Your account's entitlements decide which marketplaces you can use.",
+    "options": [
+      {
+        "label": "Idealo",
+        "value": "idealo",
+        "nested": [
+          {
+            "name": "country",
+            "type": "select",
+            "label": "Country",
+            "required": true,
+            "default": "de",
+            "options": [
+              {
+                "label": "Austria",
+                "value": "at"
+              },
+              {
+                "label": "France",
+                "value": "fr"
+              },
+              {
+                "label": "Germany",
+                "value": "de"
+              },
+              {
+                "label": "Italy",
+                "value": "it"
+              },
+              {
+                "label": "Spain",
+                "value": "es"
+              },
+              {
+                "label": "United Kingdom",
+                "value": "uk"
+              }
+            ],
+            "help": "The marketplace's country site."
+          },
+          {
+            "name": "operation",
+            "type": "select",
+            "label": "Look up by",
+            "required": true,
+            "default": "search-by-gtin",
+            "options": [
+              {
+                "label": "EAN / GTIN",
+                "value": "search-by-gtin"
+              },
+              {
+                "label": "Idealo product ID",
+                "value": "search-by-id"
+              }
+            ],
+            "help": "EAN/GTIN works on every marketplace. A product ID is the marketplace's own ID, for example an ASIN on Amazon."
+          }
+        ]
+      },
+      {
+        "label": "Amazon",
+        "value": "amazon",
+        "nested": [
+          {
+            "name": "country",
+            "type": "select",
+            "label": "Country",
+            "required": true,
+            "default": "de",
+            "options": [
+              {
+                "label": "Australia",
+                "value": "au"
+              },
+              {
+                "label": "Belgium",
+                "value": "be"
+              },
+              {
+                "label": "Brazil",
+                "value": "br"
+              },
+              {
+                "label": "Canada",
+                "value": "ca"
+              },
+              {
+                "label": "Egypt",
+                "value": "eg"
+              },
+              {
+                "label": "France",
+                "value": "fr"
+              },
+              {
+                "label": "Germany",
+                "value": "de"
+              },
+              {
+                "label": "India",
+                "value": "in"
+              },
+              {
+                "label": "Ireland",
+                "value": "ie"
+              },
+              {
+                "label": "Italy",
+                "value": "it"
+              },
+              {
+                "label": "Japan",
+                "value": "jp"
+              },
+              {
+                "label": "Mexico",
+                "value": "mx"
+              },
+              {
+                "label": "Netherlands",
+                "value": "nl"
+              },
+              {
+                "label": "Poland",
+                "value": "pl"
+              },
+              {
+                "label": "Saudi Arabia",
+                "value": "sa"
+              },
+              {
+                "label": "Singapore",
+                "value": "sg"
+              },
+              {
+                "label": "South Africa",
+                "value": "za"
+              },
+              {
+                "label": "Spain",
+                "value": "es"
+              },
+              {
+                "label": "Sweden",
+                "value": "se"
+              },
+              {
+                "label": "Türkiye",
+                "value": "tr"
+              },
+              {
+                "label": "United Arab Emirates",
+                "value": "ae"
+              },
+              {
+                "label": "United Kingdom",
+                "value": "uk"
+              },
+              {
+                "label": "United States",
+                "value": "us"
+              }
+            ],
+            "help": "The marketplace's country site."
+          },
+          {
+            "name": "operation",
+            "type": "select",
+            "label": "Look up by",
+            "required": true,
+            "default": "search-by-gtin",
+            "options": [
+              {
+                "label": "EAN / GTIN",
+                "value": "search-by-gtin"
+              },
+              {
+                "label": "ASIN",
+                "value": "search-by-id"
+              }
+            ],
+            "help": "EAN/GTIN works on every marketplace. A product ID is the marketplace's own ID, for example an ASIN on Amazon."
+          },
+          {
+            "name": "includeDetail",
+            "type": "boolean",
+            "label": "Include product details",
+            "default": true,
+            "help": "Also fetch product details such as description and images. Turn off for faster offer-only lookups."
+          },
+          {
+            "name": "zipcode",
+            "type": "text",
+            "label": "Delivery postal code",
+            "help": "Postal code used for delivery prices and availability. Leave empty to use the market default (for example 10115 for Germany). Overrides work for de, us, uk, fr, it, es, ca, jp, in, ie and za."
+          }
+        ]
+      },
+      {
+        "label": "Google Shopping",
+        "value": "google-shopping",
+        "nested": [
+          {
+            "name": "country",
+            "type": "select",
+            "label": "Country",
+            "required": true,
+            "default": "de",
+            "options": [
+              {
+                "label": "Australia",
+                "value": "au"
+              },
+              {
+                "label": "Austria",
+                "value": "at"
+              },
+              {
+                "label": "Belgium",
+                "value": "be"
+              },
+              {
+                "label": "Brazil",
+                "value": "br"
+              },
+              {
+                "label": "Canada",
+                "value": "ca"
+              },
+              {
+                "label": "Chile",
+                "value": "cl"
+              },
+              {
+                "label": "Czechia",
+                "value": "cz"
+              },
+              {
+                "label": "Denmark",
+                "value": "dk"
+              },
+              {
+                "label": "Finland",
+                "value": "fi"
+              },
+              {
+                "label": "France",
+                "value": "fr"
+              },
+              {
+                "label": "Germany",
+                "value": "de"
+              },
+              {
+                "label": "Greece",
+                "value": "gr"
+              },
+              {
+                "label": "Hungary",
+                "value": "hu"
+              },
+              {
+                "label": "India",
+                "value": "in"
+              },
+              {
+                "label": "Ireland",
+                "value": "ie"
+              },
+              {
+                "label": "Italy",
+                "value": "it"
+              },
+              {
+                "label": "Japan",
+                "value": "jp"
+              },
+              {
+                "label": "Luxembourg",
+                "value": "lu"
+              },
+              {
+                "label": "Mexico",
+                "value": "mx"
+              },
+              {
+                "label": "Netherlands",
+                "value": "nl"
+              },
+              {
+                "label": "Norway",
+                "value": "no"
+              },
+              {
+                "label": "Poland",
+                "value": "pl"
+              },
+              {
+                "label": "Portugal",
+                "value": "pt"
+              },
+              {
+                "label": "Romania",
+                "value": "ro"
+              },
+              {
+                "label": "South Africa",
+                "value": "za"
+              },
+              {
+                "label": "Spain",
+                "value": "es"
+              },
+              {
+                "label": "Sweden",
+                "value": "se"
+              },
+              {
+                "label": "Switzerland",
+                "value": "ch"
+              },
+              {
+                "label": "United Kingdom",
+                "value": "uk"
+              },
+              {
+                "label": "United States",
+                "value": "us"
+              }
+            ],
+            "help": "The marketplace's country site."
+          },
+          {
+            "name": "operation",
+            "type": "select",
+            "label": "Look up by",
+            "required": true,
+            "default": "search-by-gtin",
+            "options": [
+              {
+                "label": "EAN / GTIN",
+                "value": "search-by-gtin"
+              },
+              {
+                "label": "Google Shopping catalog ID",
+                "value": "search-by-id"
+              }
+            ],
+            "help": "EAN/GTIN works on every marketplace. A product ID is the marketplace's own ID, for example an ASIN on Amazon."
+          }
+        ]
+      },
+      {
+        "label": "bol.com",
+        "value": "bol",
+        "nested": [
+          {
+            "name": "country",
+            "type": "select",
+            "label": "Country",
+            "required": true,
+            "default": "nl",
+            "options": [
+              {
+                "label": "Belgium",
+                "value": "be"
+              },
+              {
+                "label": "Netherlands",
+                "value": "nl"
+              }
+            ],
+            "help": "The marketplace's country site."
+          },
+          {
+            "name": "operation",
+            "type": "select",
+            "label": "Look up by",
+            "required": true,
+            "default": "search-by-gtin",
+            "options": [
+              {
+                "label": "EAN / GTIN",
+                "value": "search-by-gtin"
+              },
+              {
+                "label": "bol.com product ID",
+                "value": "search-by-id"
+              }
+            ],
+            "help": "EAN/GTIN works on every marketplace. A product ID is the marketplace's own ID, for example an ASIN on Amazon."
+          }
+        ]
+      },
+      {
+        "label": "Klarna",
+        "value": "klarna",
+        "nested": [
+          {
+            "name": "country",
+            "type": "select",
+            "label": "Country",
+            "required": true,
+            "default": "de",
+            "options": [
+              {
+                "label": "Austria",
+                "value": "at"
+              },
+              {
+                "label": "Denmark",
+                "value": "dk"
+              },
+              {
+                "label": "Finland",
+                "value": "fi"
+              },
+              {
+                "label": "France",
+                "value": "fr"
+              },
+              {
+                "label": "Germany",
+                "value": "de"
+              },
+              {
+                "label": "Ireland",
+                "value": "ie"
+              },
+              {
+                "label": "Italy",
+                "value": "it"
+              },
+              {
+                "label": "Netherlands",
+                "value": "nl"
+              },
+              {
+                "label": "Norway",
+                "value": "no"
+              },
+              {
+                "label": "Spain",
+                "value": "es"
+              },
+              {
+                "label": "Sweden",
+                "value": "se"
+              },
+              {
+                "label": "United Kingdom",
+                "value": "uk"
+              },
+              {
+                "label": "United States",
+                "value": "us"
+              }
+            ],
+            "help": "The marketplace's country site."
+          }
+        ]
+      },
+      {
+        "label": "PriceRunner",
+        "value": "pricerunner",
+        "nested": [
+          {
+            "name": "country",
+            "type": "select",
+            "label": "Country",
+            "required": true,
+            "default": "uk",
+            "options": [
+              {
+                "label": "Austria",
+                "value": "at"
+              },
+              {
+                "label": "Denmark",
+                "value": "dk"
+              },
+              {
+                "label": "Finland",
+                "value": "fi"
+              },
+              {
+                "label": "France",
+                "value": "fr"
+              },
+              {
+                "label": "Germany",
+                "value": "de"
+              },
+              {
+                "label": "Ireland",
+                "value": "ie"
+              },
+              {
+                "label": "Italy",
+                "value": "it"
+              },
+              {
+                "label": "Netherlands",
+                "value": "nl"
+              },
+              {
+                "label": "Norway",
+                "value": "no"
+              },
+              {
+                "label": "Spain",
+                "value": "es"
+              },
+              {
+                "label": "Sweden",
+                "value": "se"
+              },
+              {
+                "label": "United Kingdom",
+                "value": "uk"
+              },
+              {
+                "label": "United States",
+                "value": "us"
+              }
+            ],
+            "help": "The marketplace's country site."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "queries",
+    "type": "array",
+    "label": "EANs or product IDs",
+    "required": true,
+    "spec": {
+      "type": "text",
+      "label": "EAN or product ID",
+      "name": "value"
+    },
+    "help": "1 to 1,000 values per job. Each value costs 1 credit. Keep leading zeros in EANs."
+  }
+]

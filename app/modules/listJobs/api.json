@@ -1,0 +1,18 @@
+{
+  "url": "/api/v2/jobs",
+  "method": "GET",
+  "qs": {
+    "limit": 200
+  },
+  "response": {
+    "iterate": "{{body.jobs}}",
+    "output": "{{item}}",
+    "limit": "{{parameters.limit}}"
+  },
+  "pagination": {
+    "qs": {
+      "cursor": "{{body.next_cursor}}"
+    },
+    "condition": "{{body.next_cursor}}"
+  }
+}

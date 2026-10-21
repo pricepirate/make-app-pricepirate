@@ -1,0 +1,6 @@
+{
+  "name": "getOffers",
+  "typeId": 9,
+  "label": "Get offers by EAN",
+  "description": "Returns current offers for EANs or product IDs on a marketplace, one bundle per query with its offers. Waits up to about 4 minutes for the job."
+}
