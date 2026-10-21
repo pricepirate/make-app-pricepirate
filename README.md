@@ -1,6 +1,6 @@
-# PricePirate Price API for Make
+# PricePirate for Make
 
-A [Make](https://www.make.com) custom app for the [PricePirate Price API](https://pricepirate.com/en/price-api/): current prices, offers and product details for EANs and marketplace product IDs on Idealo, Amazon, Google Shopping, bol.com, Klarna and PriceRunner.
+A [Make](https://www.make.com) custom app ("PricePirate") for the [PricePirate Price API](https://pricepirate.com/en/price-api/): current prices, offers and product details for EANs and marketplace product IDs on Idealo, Amazon, Google Shopping, bol.com, Klarna and PriceRunner.
 
 Maintained by UCX Media – Sergei Gaponik. Support: info@gaponik.com.
 

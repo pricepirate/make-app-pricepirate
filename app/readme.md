@@ -1,4 +1,4 @@
-# PricePirate Price API
+# PricePirate
 
 Look up current prices, offers and product details for EANs and marketplace product IDs on Idealo, Amazon, Google Shopping, bol.com, Klarna and PriceRunner.
 
