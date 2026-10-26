@@ -12,12 +12,6 @@
     }
   },
   "response": {
-    "output": {
-      "job_id": "{{body.job_id}}",
-      "source": "{{parameters.marketplace}}",
-      "country": "{{parameters.country}}",
-      "operation": "{{ifempty(parameters.operation, 'search-by-gtin')}}",
-      "query_count": "{{length(parameters.queries)}}"
-    }
+    "output": "{{body}}"
   }
 }

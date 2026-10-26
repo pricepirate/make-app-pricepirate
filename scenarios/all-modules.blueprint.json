@@ -148,7 +148,7 @@
           "flow": [
             {
               "id": 8,
-              "module": "app#pricepirate-price-api-wgy97z:getProductDetails",
+              "module": "app#pricepirate-price-api-wgy97z:getOffers",
               "version": 1,
               "parameters": {
                 "__IMTCONN__": "{{CONNECTION_ID}}"
@@ -160,7 +160,8 @@
                 "includeDetail": true,
                 "queries": [
                   "4013474101469"
-                ]
+                ],
+                "skipEmpty": false
               },
               "metadata": {
                 "designer": {

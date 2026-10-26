@@ -1,5 +1,5 @@
 [
   {
-    "$include": "shared/results.interface.json"
+    "$include": "shared/result.interface.json"
   }
 ]

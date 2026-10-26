@@ -2,5 +2,6 @@
   "name": "getAccount",
   "typeId": 4,
   "label": "Get account",
-  "description": "Returns your credit balance, concurrency and daily limits, and the marketplaces your account can use."
+  "description": "Returns your credit balance, concurrency and daily limits, and the marketplaces your account can use.",
+  "crud": "read"
 }

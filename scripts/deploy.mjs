@@ -118,13 +118,12 @@ async function deploy(built) {
 
   const { appModules = [] } = await call("GET", `${app}/modules`);
   for (const m of built.modules) {
-    const { name, typeId, label, description } = m.meta;
+    const { name, typeId, label, description, crud = null } = m.meta;
     if (!appModules.some((x) => x.name === name)) {
       await call("POST", `${app}/modules`, { name, typeId, label, description, connection, moduleInitMode: "blank" });
       console.log(`created module ${name}`);
-    } else {
-      await call("PATCH", `${app}/modules/${name}`, { label, description, connection });
     }
+    await call("PATCH", `${app}/modules/${name}`, { label, description, connection, crud });
     const mod = `${app}/modules/${name}`;
     await call("PUT", `${mod}/api`, m.api);
     await call("PUT", `${mod}/expect`, m.expect);
@@ -133,6 +132,11 @@ async function deploy(built) {
     if (m.samples) await call("PUT", `${mod}/samples`, m.samples);
   }
   await call("PUT", `${app}/groups`, built.groups);
+  // A public app cannot delete modules, so modules removed from ./app are made private (hidden).
+  for (const { name } of appModules.filter((x) => x.public && !built.modules.some((m) => m.meta.name === x.name))) {
+    await call("POST", `${app}/modules/${name}/private`);
+    console.log(`hid module ${name}`);
+  }
   console.log(`deployed ${appName} v${version}: ${built.modules.length} modules, connection ${connection}`);
 }
 

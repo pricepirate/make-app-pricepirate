@@ -8,8 +8,7 @@ Create an API key in the [PricePirate dashboard](https://dashboard.pricepirate.c
 
 ## Modules
 
-- **Get offers by EAN**: starts a job, waits up to about 4 minutes and returns one bundle per query with its offers.
-- **Get product details by EAN**: same, with product details instead of offers.
+- **Search offers**: starts a job, waits up to about 4 minutes and returns one bundle per query with the product details and its offers, exactly as the API returns them.
 - **Start a price job** and **Get job results**: for large batches. Start the job, then fetch the results later (for example after a Sleep module or in a second scenario). Results stay available for about 1 hour after the job finishes.
 - **List jobs**, **Get account** and **Make an API call**.
 

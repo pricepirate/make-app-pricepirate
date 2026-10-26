@@ -15,11 +15,7 @@
       "polls": "{{temp.polls + 1}}"
     },
     "error": {
-      "message": "[{{statusCode}}] {{ifempty(body.message, 'Polling failed.')}} Job {{temp.jobId}} was already created. Fetch it with Get job results within about 1 hour; do not start it again.",
-      "429": {
-        "type": "RateLimitError",
-        "message": "[429] {{ifempty(body.message, 'Rate limited while polling.')}} Job {{temp.jobId}} was already created. Fetch it with Get job results within about 1 hour; do not start it again."
-      }
+      "$include": "shared/poll-error.json"
     }
   }
 }

@@ -1,0 +1,83 @@
+{
+  "query": "4013474101469",
+  "status": "found",
+  "result": {
+    "id": "200377262",
+    "name": "Gehwol Fusskraft Soft Feet Butter (100ml)",
+    "url": "https://www.idealo.de/preisvergleich/OffersOfProduct/200377262",
+    "ean": "4013474101469",
+    "brand": null,
+    "description": null,
+    "image_urls": [
+      "https://cdn.idealo.com/folder/Product/200377/2/200377262/s1_produktbild_gross/gehwol-fusskraft-soft-feet-butter-100ml.jpg",
+      "https://cdn.idealo.com/folder/Product/200377/2/200377262/s1_produktbild_gross_1/gehwol-fusskraft-soft-feet-butter-100ml.jpg"
+    ],
+    "review_rating": null,
+    "review_count": null,
+    "categories": null,
+    "category_ids": [
+      "10892"
+    ],
+    "available_since": null,
+    "last_updated": "Daten vom 26.10.2026 15:49",
+    "price_avg": 18,
+    "price_max": 29.66,
+    "price_min": 14.49,
+    "offers_count": 12,
+    "offers": [
+      {
+        "title": "GEHWOL FUSSKRAFT Soft Feet Butter Granatapfel&Moringa für gepflegte Füße 100ml",
+        "sellerId": "9701",
+        "shop_name": "sona24de",
+        "shop_url": "https://www.idealo.de/relocator/relocate?categoryId=10892&offerKey=3eb30dad526e7657fd4286edacc35154&pos=1&price=14.49&productid=200377262&sid=9701&type=offer",
+        "shop_type": "marketplace-shop",
+        "marketplace_name": "eBay",
+        "shop_review_rating": 5,
+        "shop_review_count": 624,
+        "position": "0",
+        "condition": "new",
+        "currency": "EUR",
+        "price": 14.49,
+        "shipping": 3.9,
+        "total": 18.39,
+        "free_return": true,
+        "voucher": false,
+        "availability_code": "in_stock",
+        "availability_text": "Lieferung: bis Do. 29.10.",
+        "direct_sale": null,
+        "classification": "product_page_match",
+        "confidence": "high",
+        "platform_data": {}
+      },
+      {
+        "title": "GEHWOL Fusskraft Soft Feet Butter 100ml",
+        "sellerId": "325442",
+        "shop_name": "cosmetic.de",
+        "shop_url": "https://www.idealo.de/relocator/relocate?categoryId=10892&offerKey=87609233909b2d0b28d88508e2ffacc4&pos=2&price=15.21&productid=200377262&sid=325442&type=offer",
+        "shop_type": "standalone-shop",
+        "marketplace_name": "N/A",
+        "shop_review_rating": 4,
+        "shop_review_count": 268,
+        "position": "1",
+        "condition": "new",
+        "currency": "EUR",
+        "price": 15.21,
+        "shipping": 4.9,
+        "total": 20.11,
+        "free_return": null,
+        "voucher": false,
+        "availability_code": "in_stock",
+        "availability_text": "Lieferung: bis Do. 29.10.",
+        "direct_sale": null,
+        "classification": "product_page_match",
+        "confidence": "high",
+        "platform_data": {}
+      }
+    ],
+    "source": "idealo",
+    "country": "de",
+    "fetched_at": "2026-10-26T15:49:54.423Z",
+    "page_type": "product",
+    "platform_data": {}
+  }
+}

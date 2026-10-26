@@ -1,6 +1,6 @@
 [
-  { "label": "Prices", "modules": ["getOffers", "getProductDetails"] },
-  { "label": "Jobs", "modules": ["startPriceJob", "getJobResults", "listJobs"] },
+  { "label": "Prices", "modules": ["getOffers"] },
+  { "label": "Jobs", "modules": ["listJobs", "getJobResults", "startPriceJob"] },
   { "label": "Account", "modules": ["getAccount"] },
   { "label": "Other", "modules": ["makeApiCall"] }
 ]

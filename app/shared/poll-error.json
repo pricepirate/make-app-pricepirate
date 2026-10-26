@@ -1,0 +1,9 @@
+{
+  "type": "RuntimeError",
+  "message": "[{{statusCode}}] {{ifempty(body.message, 'Fetching the job failed.')}} Job {{temp.jobId}} was already created and charged. Fetch it with Get job results within about 1 hour; do not start it again.",
+  "429": { "type": "RuntimeError", "message": "[429] {{ifempty(body.message, 'Rate limited while fetching the job.')}} Job {{temp.jobId}} was already created and charged. Fetch it with Get job results within about 1 hour; do not start it again." },
+  "500": { "type": "RuntimeError", "message": "[500] {{ifempty(body.message, 'PricePirate server error.')}} Job {{temp.jobId}} was already created and charged. Fetch it with Get job results within about 1 hour; do not start it again." },
+  "502": { "type": "RuntimeError", "message": "[502] {{ifempty(body.message, 'PricePirate upstream error.')}} Job {{temp.jobId}} was already created and charged. Fetch it with Get job results within about 1 hour; do not start it again." },
+  "503": { "type": "RuntimeError", "message": "[503] {{ifempty(body.message, 'PricePirate is temporarily unavailable.')}} Job {{temp.jobId}} was already created and charged. Fetch it with Get job results within about 1 hour; do not start it again." },
+  "504": { "type": "RuntimeError", "message": "[504] {{ifempty(body.message, 'PricePirate gateway timeout.')}} Job {{temp.jobId}} was already created and charged. Fetch it with Get job results within about 1 hour; do not start it again." }
+}

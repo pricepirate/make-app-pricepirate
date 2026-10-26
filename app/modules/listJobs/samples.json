@@ -1,0 +1,20 @@
+{
+  "job_id": "d38ad7d8-1c04-4ca1-a99c-7d4c0841c293",
+  "source": "idealo",
+  "operation": "search-by-gtin",
+  "country": "de",
+  "query_count": 1,
+  "integration": "make",
+  "credits": {
+    "billed": 1,
+    "refunded": 0
+  },
+  "settled": true,
+  "created_at": "2026-10-26T15:49:52.548Z",
+  "settled_at": "2026-10-26T15:49:58.678Z",
+  "results": {
+    "found": 1,
+    "not_found": 0,
+    "error": 0
+  }
+}

@@ -17,6 +17,6 @@
     "name": "limit",
     "type": "uinteger",
     "label": "Limit",
-    "help": "Maximum number of bundles to return. Leave empty to return one bundle per query."
+    "help": "Maximum number of bundles to return. Leave empty to return every query of the job: the credits are already spent, so a default would silently drop paid results."
   }
 ]

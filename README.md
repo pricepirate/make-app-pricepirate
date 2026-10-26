@@ -8,19 +8,18 @@ Maintained by UCX Media – Sergei Gaponik. Support: info@gaponik.com.
 
 | Module | Type | What it does |
 | --- | --- | --- |
-| Get offers by EAN | Search | Starts a job, waits up to about 4 minutes, returns one bundle per query with an `offers` array. |
-| Get product details by EAN | Search | Same, one bundle per query with product details (description, images, categories, ratings, price range). |
-| Start a price job | Action | Starts a job and returns its `job_id` without waiting. |
-| Get job results | Search | Returns a finished job, one bundle per query with product details and offers. |
+| Search offers | Search | Starts a job, waits up to about 4 minutes, returns one bundle per query: the API's result item (`query`, `status`, `errorCode`, `result` with product details and `offers`) as-is. |
 | List jobs | Search | Your job history, with cursor pagination. |
-| Get account | Action | Credit balance, limits and entitlements. |
+| Get job results | Search | Returns a finished job, one bundle per query, same output as Search offers. |
+| Start a price job | Action (create) | Starts a job and returns the API response (`job_id`) without waiting. |
+| Get account | Action (read) | Credit balance, limits and entitlements. |
 | Make an API call | Universal | Any authorized call relative to `https://api-v2.pricepirate.com`. |
 
 Every query returns a bundle, including queries that were `not_found` or failed (`status`, `error`, `errorCode`). Turn on **Skip queries without offers** to drop them. Use Make's Iterator on `offers` to get one bundle per offer.
 
 ### Waiting and large batches
 
-Make stops a module after 300 seconds. The waiting modules poll `GET /api/v2/jobs/{id}?omit_partials=true` every 5 seconds, up to 48 times, then make one final poll that returns the results and settles refunds. If the job is still running, the module fails with the job ID; fetch it later with **Get job results** within about 1 hour. Jobs usually take 1–2 minutes and can take up to about 15, so for large batches use **Start a price job**, then **Get job results** after a Sleep module or in a second scenario.
+Make stops a module after 300 seconds. Search offers polls `GET /api/v2/jobs/{id}?omit_partials=true` every 5 seconds, up to 48 times, then make one final poll that returns the results and settles refunds. Errors on these polls (including 429 and 5xx) are non-retriable `RuntimeError`s, because a Make retry would rerun the module from its POST and start a second paid job. If the job is still running, the module fails with the job ID; fetch it later with **Get job results** within about 1 hour. Jobs usually take 1–2 minutes and can take up to about 15, so for large batches use **Start a price job**, then **Get job results** after a Sleep module or in a second scenario.
 
 ## Repository layout
 
