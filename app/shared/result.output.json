@@ -1,0 +1,10 @@
+{
+  "query": "{{item.query}}",
+  "status": "{{item.status}}",
+  "error": "{{item.error}}",
+  "errorCode": "{{item.errorCode}}",
+  "result": {
+    "{{...}}": "{{item.result}}",
+    "fetched_at": "{{if(item.result.fetched_at; parseDate(ifempty(item.result.fetched_at; '1970-01-01T00:00:00.000Z'); 'YYYY-MM-DDTHH:mm:ss.SSSZ'); null)}}"
+  }
+}

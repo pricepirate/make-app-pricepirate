@@ -15,7 +15,7 @@ Maintained by UCX Media – Sergei Gaponik. Support: info@gaponik.com.
 | Get account | Action (read) | Credit balance, limits and entitlements. |
 | Make an API call | Universal | Any authorized call relative to `https://api-v2.pricepirate.com`. |
 
-Every query returns a bundle, including queries that were `not_found` or failed (`status`, `error`, `errorCode`). Turn on **Skip queries without offers** to drop them. Use Make's Iterator on `offers` to get one bundle per offer.
+Date fields (`result.fetched_at`, `created_at`, `settled_at`, `limits.daily.resets_at`) are parsed into Make dates; everything else is the API response as-is. Every query returns a bundle, including queries that were `not_found` or failed (`status`, `error`, `errorCode`). Turn on **Skip queries without offers** to drop them. Use Make's Iterator on `offers` to get one bundle per offer.
 
 ### Waiting and large batches
 

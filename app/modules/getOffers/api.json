@@ -20,7 +20,9 @@
         "container": "{{body.results}}",
         "condition": "{{!parameters.skipEmpty || (item.status == 'found' && length(item.result.offers) > 0)}}"
       },
-      "output": "{{item}}",
+      "output": {
+        "$include": "shared/result.output.json"
+      },
       "limit": "{{parameters.limit}}"
     }
   }

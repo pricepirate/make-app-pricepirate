@@ -6,7 +6,11 @@
   },
   "response": {
     "iterate": "{{body.jobs}}",
-    "output": "{{item}}",
+    "output": {
+      "{{...}}": "{{item}}",
+      "created_at": "{{if(item.created_at; parseDate(ifempty(item.created_at; '1970-01-01T00:00:00.000Z'); 'YYYY-MM-DDTHH:mm:ss.SSSZ'); null)}}",
+      "settled_at": "{{if(item.settled_at; parseDate(ifempty(item.settled_at; '1970-01-01T00:00:00.000Z'); 'YYYY-MM-DDTHH:mm:ss.SSSZ'); null)}}"
+    },
     "limit": "{{parameters.limit}}"
   },
   "pagination": {

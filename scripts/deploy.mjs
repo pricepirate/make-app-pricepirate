@@ -132,9 +132,11 @@ async function deploy(built) {
     if (m.samples) await call("PUT", `${mod}/samples`, m.samples);
   }
   await call("PUT", `${app}/groups`, built.groups);
-  // A public app cannot delete modules, so modules removed from ./app are made private (hidden).
-  for (const { name } of appModules.filter((x) => x.public && !built.modules.some((m) => m.meta.name === x.name))) {
-    await call("POST", `${app}/modules/${name}/private`);
+  // A public app cannot delete modules, so modules removed from ./app are made private (hidden)
+  // and labelled "[DO NOT USE]", as Make's review asked.
+  for (const { name, label, public: isPublic } of appModules.filter((x) => !built.modules.some((m) => m.meta.name === x.name))) {
+    if (isPublic) await call("POST", `${app}/modules/${name}/private`);
+    if (!label.startsWith("[DO NOT USE] ")) await call("PATCH", `${app}/modules/${name}`, { label: `[DO NOT USE] ${label}` });
     console.log(`hid module ${name}`);
   }
   console.log(`deployed ${appName} v${version}: ${built.modules.length} modules, connection ${connection}`);
